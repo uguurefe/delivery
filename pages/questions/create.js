@@ -1,4 +1,5 @@
 import axios from "axios"
+import { Container,Row,Col,Button } from 'react-bootstrap';
 
 export default function Create() {
   const addNewQuestion = async event =>{
@@ -21,16 +22,23 @@ export default function Create() {
      });
   }
   return (
-    <div>
-      <form onSubmit={addNewQuestion}>
-        <label>Question: </label>
-        <input type="text" name="question" className="question" placeholder="What is your favourite color?"/>
-        <br/>
-        <label>Choice: </label>
-        <input type="text" name="choice" className="question" placeholder="Please enter your choices with ','"/>
-        <button type="submit" >Add</button>
-      </form>
-    </div>  
+      <Container className="my-4">
+        <Row>
+          <Col></Col>
+          <Col>
+            <form onSubmit={addNewQuestion}>
+              <label>Question: </label>
+              <input type="text" name="question" className="question form-control" placeholder="What is your favourite color?"/>
+              <br/>
+              <label>Choice: </label>
+              <input type="text" name="choice" className="question form-control" placeholder="Please enter your choices with ','"/>
+              <br/>
+              <Button type="submit" variant="success ">Add</Button>
+            </form>
+          </Col>
+          <Col></Col>
+        </Row>
+      </Container>
   )
 }
   
